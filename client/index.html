@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Financial Tracker</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="./src/ui/bower_components/angular-material/angular-material.min.css"/>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/paper/bootstrap.min.css">
+    <link rel="stylesheet" href="//code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+    <link rel="stylesheet" type="text/css" href="./src/ui/bower_components/angular-ui-grid/ui-grid.css" />
+    <link rel="stylesheet" href="src/ui/style/uigridlist.css">
+    <link rel="stylesheet" href="./src/ui/style/login.css">
+</head>
+<body>
+<script type="text/javascript" src="//marcoslin.github.io/angularAMD/js/lib/requirejs/require.js" data-main="main"></script>
+<body>
+<div  class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <ul id = "navbar" class="nav navbar-nav">
+            <a href="/" class="navbar-brand"><i class="ion-cash"></i> FinancialTracker</a>
+            <li><a ng-href="#/home">Home</a></li>
+            <li><a ng-href="#/overview">Overview</a></li>
+            <li><a ng-href="#/transaction">Transaction</a></li>
+            <li><a ng-href="#/analysis">Analysis</a></li>            
+            <li style="display:block" id = "login"><a ng-href="#/login">Log in</a></li>
+            <li><a ng-href="#/signup">Sign up</a></li>
+            <li style="display:none" id = "logout"><a onclick="logout()" href="">Logout</a></li>
+
+        </ul>
+    </div>
+</div>
+<div ui-view="main"></div>
+</body>
+</body>
+</html>
+<script>
+   $(document).ready(function(){
+           var logoutDOM = document.getElementById('logout');
+           var loginDOM = document.getElementById('login');
+           var isloginStatus;
+           isloginStatus = window.sessionStorage.loginStatus;
+           if(isloginStatus == 'true'){
+               loginDOM.style.display = "none";
+               logoutDOM.style.display = "block";
+           }
+        }
+);
+
+   function logout(){
+       var logoutDOM = document.getElementById('logout');
+       var loginDOM = document.getElementById('login');
+      if(window.sessionStorage.loginStatus == 'true'){
+          window.sessionStorage.clear();
+          loginDOM.style.display = "block";
+          logoutDOM.style.display = "none";
+          window.location.href = '#login';
+      }
+   }
+</script>

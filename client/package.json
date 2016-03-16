@@ -1,0 +1,22 @@
+{
+  "name": "financial-tracker",
+  "version": "1.0.0",
+  "description": "client for financial-tracker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall":"bower install --config.cwd=./src/ui"
+  },
+  "devDependencies":{
+    "nock": "^2.3.0",
+    "requirejs": "^2.1.17",
+    "bower-requirejs": "^1.1.3"
+  },
+  "dependencies":{
+    "bower": "^1.4.1",
+    "amdefine": "^0.1.0"
+
+  },
+  "author": "",
+  "license": "ISC"
+}

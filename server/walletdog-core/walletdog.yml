@@ -1,0 +1,15 @@
+database: jdbc:sqlite:/tmp/walletdog.db
+
+sql:
+    init_user: CREATE TABLE IF NOT EXISTS users (userid INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT UNIQUE, password TEXT, username TEXT)
+    init_category: CREATE TABLE IF NOT EXISTS category (categoryid INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT UNIQUE, description TEXT)
+    init_expenses: CREATE TABLE IF NOT EXISTS expenses (entryid INTEGER PRIMARY KEY AUTOINCREMENT, userid INTEGER, amount REAL, date TEXT, categoryid INTEGER, location TEXT, description TEXT, FOREIGN KEY(userid) REFERENCES user(userid), FOREIGN KEY(categoryid) REFERENCES category(categoryid))
+
+server:
+  type: simple
+  applicationContextPath: /application
+  adminContextPath: /admin
+  connector:
+    type: http
+    port: 8080
+    

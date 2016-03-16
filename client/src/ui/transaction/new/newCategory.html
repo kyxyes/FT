@@ -1,0 +1,19 @@
+<md-dialog style="min-width: 540px">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h3>Create New Category</h3>
+        </div>
+    </md-toolbar>
+    <md-content class="md-padding">
+        <md-input-container>
+            <label>Category Name</label>
+            <input type="text" ng-model="categoryName">
+        </md-input-container>
+        <md-input-container>
+            <label>Description</label>
+            <input type="text" ng-model="categoryDescription">
+        </md-input-container>
+        <md-button class="md-raised md-primary" ng-click="confirm()">Confirm</md-button>
+        <md-button class="md-raised md-primary" ng-click="cancel()">Cancel</md-button>
+    </md-content>
+</md-dialog>

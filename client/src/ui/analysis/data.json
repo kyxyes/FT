@@ -1,0 +1,16 @@
+{
+	"records":[
+		{
+			"name":"merchandise",
+			"y":10
+		},
+		{
+			"name":"dinning",
+			"y":15
+		},
+		{
+			"name":"entertainment",
+			"y":20
+		}
+	]
+}

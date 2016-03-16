@@ -1,0 +1,53 @@
+<md-content class="md-padding" style="margin-top:3%; width:100%">
+    <md-content style="float:left;width: 40%">
+        <md-card>
+            <md-select ng-model="yearModel"placeholder="Select Year">
+                <md-option ng-repeat="year in yearValue" value="{{year}}">
+                    {{year}}
+                </md-option>
+            </md-select>
+            <md-select ng-model="monthModel"placeholder="Select Month">
+                <md-option ng-repeat="mon in monthValue" value="{{mon}}">
+                    {{mon}}
+                </md-option>
+            </md-select>
+            <div style="margin-bottom: 5%" ui-grid="gridOption" class="grid"></div>
+        </md-card>
+    </md-content>
+    <md-content style="float:right; width: 59%">
+        <md-card>
+        <md-tabs md-dynamic-height md-border-buttom md-selected="1">
+            <md-tab label="Day">
+                <md-content>
+                    <daypilot-calendar id="dp_cal_day" daypilot-config="dayConfig" daypilot-events="events"> </daypilot-calendar>
+                </md-content>
+                <md-content>
+                    <md-button flex class="md-raised md-primary" ng-click="calPrevious('day')">Previous</md-button>
+                    <md-button flex class="md-raised md-primary" ng-click="calCurrent()">Current</md-button>
+                    <md-button flex class="md-raised md-primary" ng-click="calNext('day')">Next</md-button>
+                </md-content>
+            </md-tab>
+            <md-tab label="Week" >
+                <md-content>
+                    <daypilot-calendar id="dp_cal_week" daypilot-config="weekConfig" daypilot-events="events"> </daypilot-calendar>
+                </md-content>
+                <md-content>
+                    <md-button flex class="md-raised md-primary" ng-click="calPrevious('week')">Previous</md-button>
+                    <md-button flex class="md-raised md-primary" ng-click="calCurrent()">Current</md-button>
+                    <md-button flex class="md-raised md-primary" ng-click="calNext('week')">Next</md-button>
+                </md-content>
+            </md-tab>
+            <md-tab label="Month">
+                <md-content>
+                    <daypilot-month id="dp_cal_month" daypilot-config="monthConfig" daypilot-events="events"> </daypilot-month>
+                </md-content>
+                <md-content>
+                    <md-button flex class="md-raised md-primary" ng-click="calPrevious('month')">Previous</md-button>
+                    <md-button flex class="md-raised md-primary" ng-click="calCurrent()">Current</md-button>
+                    <md-button flex class="md-raised md-primary" ng-click="calNext('month')">Next</md-button>
+                </md-content>
+            </md-tab>
+        </md-tabs>
+        </md-card>
+    </md-content>
+</md-content>

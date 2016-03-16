@@ -1,0 +1,35 @@
+<md-dialog style="min-width: 540px">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h3>Create New Transaction</h3>
+        </div>
+    </md-toolbar>
+    <form class="md-padding">
+        <md-input-container flex>
+            <label>Date</label>
+            <input type="datetime-local" ng-model="transactionDate">
+        </md-input-container>
+        <md-input-container>
+            <label>Amount</label>
+            <input type="number" ng-model="transactionAmount">
+        </md-input-container>
+        <md-input-container>
+            <label>Location</label>
+            <input type="text" ng-model="transactionLocation">
+        </md-input-container>
+        <md-input-container>
+            <label>Category</label>
+            <md-select ng-model="categorySelect">
+                <md-option ng-repeat="category in categories" ng-value=category.categoryid >{{category.name}}</md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container>
+            <label>Description</label>
+            <input type="text" ng-model="transactionDescription">
+        </md-input-container>
+        <md-content>
+            <md-button class="md-raised md-primary" ng-click="confirm()">Confirm</md-button>
+            <md-button class="md-raised md-primary" ng-click="cancel()">Cancel</md-button>
+        </md-content>
+    </form>
+</md-dialog>
